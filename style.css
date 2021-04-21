@@ -70,7 +70,7 @@ hyphens: auto;
 text-align: left;
 }
 
-h2 {
+h2, h6 {
 font-family: 'Catamaran', sans-serif;
 font-style: bold;
 font-weight: bold;
@@ -138,7 +138,7 @@ ol > li {
      font-size: 2.0em;
    }
 
-   h2 {
+   h6 {
      font-size: 1.0em;
    }
 
