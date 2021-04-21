@@ -1,65 +1,156 @@
-/* font-family: 'Berkshire Swash', cursive;
-font-family: 'Catamaran', sans-serif; */
+/*
+Font Names:
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Catamaran', sans-serif;
+*/
 
 body, html {
-  margin: 0;
+  margin-left: 5vw;
+  margin-right: 5vw;
   font-family: 'Catamaran', sans-serif;
   font-size: 1.2em;
+  box-sizing: border-box;
+  background-color: #f9f2ec;
+  color: #003300;
 }
 
+hr {
+  border: 0px;
+}
 
+/* Grid containers ----------------------------------------------------------*/
 .grid-container {
-display:grid;
-grid-template-columns: 20vw auto;
+display: grid;
+margin: 0 auto;
+grid-template-rows: auto;
+grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+grid-gap: 0px;
+background-color: white;
+padding: 10px;
+border-radius: 7pt;
+border-color: #ccffcc;
+border-width: medium;
+border-style: outset;
 }
 
-.upper-nav {
-  grid-column: span 2;
-  display: flex;
+.grid-container > div {
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-column: span 5;
+  border-radius: 15pt;
 }
 
-.nav-item-container {
-  width:100%;
-  display: flex;
-  justify-content: flex-end;}
-
-.side-nav {grid-column-end: 2;}
-.content {grid-column-start: 2;}
-.footer{grid-column: span 2;}
-
-
-
-
-.nav-item {
-  margin-right:2em;
+.main-image {
+  background-image: url("img/FoodImage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
 }
 
-.outlines {
-  border: 1px solid black;
-  margin:5px;
-  height: 100px;
+.right-panel, .left-panel, .other-panel {
+  background-color: white;
+  text-align: left;
+  font-size: 30px;
+}
+
+.title-grid-container {
+background-color: #ccffcc;
+border-radius: 7pt;
+}
+
+/* Type styles --------------------------------------------------------------*/
+h1 {
+font-family: 'Berkshire Swash', cursive;
+font-size: 3.0em;
+letter-spacing: 0.05em;
+margin-left: 0.5em;
+word-break: normal;
+hyphens: auto;
+text-align: left;
+}
+
+h2 {
+font-family: 'Catamaran', sans-serif;
+font-style: bold;
+font-weight: bold;
+font-size: 1.5em;
+line-height: 20px;
+margin-top: 0.5em;
+margin-bottom: 0.05em;
+}
+
+h3 {
+font-family: 'Catamaran', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 1.2em;
+line-height: 25px;
+margin: 1.2em 1.5em;
+}
+
+ol, ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.7em;
+}
+
+ol > li {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* Flexbox ------------------------------------------------------------------*/
+.boxes {
+  width: 100%;
   text-align: center;
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1.4em 0;
+}
 
+.box {
+  width: 30%;
+  text-align:center;
+  margin-right: 1em;
 }
 
 
-.logo {
-height: 120px;
-width:100%;
-background-image: url("img/logo.jpg");
-background-repeat: no-repeat;
-background-size: contain;
+/* Media Query - different device sizes -------------------------------------*/
+/* smaller screen size */
+ @media screen and (max-width:700px){
+
+   .grid-container {
+     grid-gap: 0px;
+   }
+
+   .grid-container > div {
+     padding: 0px;
+     grid-column: span 5;
+   }
+
+   .main-image {
+     background-size: auto;
+   }
+
+   ul, ol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+   }
 }
 
-/* This is where you can add in special rules for different device sizes */
-@media screen and (max-width:700px){
+/* larger screen size */
+@media (min-width: 1150px) {
+  html {
+        font-size: 1vw;
+       }
+
+  h2  {
+       font-size: 3vw;
+      }
 
   .grid-container {
-    display:block;
-  }
-
-  .nav-item-container{
-    display:block;
+      grid-gap: 10px;
   }
 }
